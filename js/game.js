@@ -271,7 +271,7 @@ Cloud = function(){
 });
 
   // duplicate the geometry a random number of times
-  var nBlocs = 3 + Math.floor(Math.random() * 3);
+  var nBlocs = 18 + Math.floor(Math.random() * 12);
   for (var i = 0; i < nBlocs; i++) {
 
     // create the mesh by cloning the geometry
@@ -285,7 +285,7 @@ Cloud = function(){
     m.rotation.y = Math.random() * Math.PI * 2;
 
     // set the size of the cube randomly
-    var s = .1 + Math.random() * .9;
+    var s = .6 + Math.random() * .9;
     m.scale.set(s, s, s);
 
     // allow each cube to cast and to receive shadows

@@ -261,10 +261,8 @@ function createSea() {
 Cloud = function(){
   this.mesh = new THREE.Object3D();
   this.mesh.name = "cloud";
-  //var geom = new THREE.CubeGeometry(20,18,20);
   var geom = new THREE.TetrahedronGeometry(8.5,2);
- // var geom = new THREE.TetrahedronGeometry(4,4)
- var mat = new THREE.MeshLambertMaterial({
+  var mat = new THREE.MeshLambertMaterial({
   color:Colors.white,
   flatShading:true,
   opacity: 0.8  

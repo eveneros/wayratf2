@@ -7,6 +7,5 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: white;
-    /* background: linear-gradient(#531c9b, #e4095d); */
+    background: linear-gradient(#0829bb, #77aeec);
   }

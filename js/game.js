@@ -200,7 +200,7 @@ Sea = function() {
     });
   };
   var mat = new THREE.MeshPhongMaterial({
-    color: Colors.blue,
+    color: Colors.brownDark,
     transparent: true,
     opacity: .8,
     shading: THREE.FlatShading,

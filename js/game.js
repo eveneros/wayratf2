@@ -281,8 +281,8 @@ Cloud = function(){
     m.position.x = i * 15;
     m.position.y = Math.random() * 10;
     m.position.z = Math.random() * 10;
-    m.rotation.z = Math.random() * Math.PI * 2;
-    m.rotation.y = Math.random() * Math.PI * 2;
+    m.rotation.z = Math.random() * Math.PI * 0.002;
+    m.rotation.y = Math.random() * Math.PI * 0.002;
 
     // set the size of the cube randomly
     var s = .6 + Math.random() * .9;

@@ -270,30 +270,30 @@ Cloud = function(){
   opacity: 0.8  
 });
 
-  // duplicate the geometry a random number of times
-  var nBlocs = 18 + Math.floor(Math.random() * 12);
-  for (var i = 0; i < nBlocs; i++) {
-
-    // create the mesh by cloning the geometry
-    var m = new THREE.Mesh(geom, mat);
-
-    // set the position and the rotation of each cube randomly
-    m.position.x = i * 15;
-    m.position.y = Math.random() * 10;
-    m.position.z = Math.random() * 10;
-    m.rotation.z = Math.random() * Math.PI * 0.002;
-    m.rotation.y = Math.random() * Math.PI * 0.002;
-
-    // set the size of the cube randomly
-    var s = .6 + Math.random() * .9;
-    m.scale.set(s, s, s);
-
-    // allow each cube to cast and to receive shadows
+  var nBlocs = 18+Math.floor(Math.random()*12);
+  for (var i=0; i<nBlocs; i++ ){
+    var m = new THREE.Mesh(geom.clone(), mat);
+    m.position.x = i*3;
+    m.position.y = Math.random()*10;
+    m.position.z = Math.random()*50;
+    m.rotation.z = Math.random()*Math.PI*0.002;
+    m.rotation.y = Math.random()*Math.PI*0.002;
+    var s = .6 + Math.random()*.9;
+    m.scale.set(s,s,s);
+    this.mesh.add(m);
     m.castShadow = true;
     m.receiveShadow = true;
 
-    // add the cube to the container we first created
-    this.mesh.add(m);
+  }
+  
+}
+
+Cloud.prototype.rotate = function(){
+  var l = this.mesh.children.length;
+  for(var i=0; i<l; i++){
+    var m = this.mesh.children[i];
+    m.rotation.z+= Math.random()*.005*(i+1);
+    m.rotation.y+= Math.random()*.002*(i+1);
   }
 }
 

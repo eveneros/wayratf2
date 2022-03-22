@@ -258,18 +258,17 @@ function createSea() {
   scene.add(sea.mesh);
 }
 
-Cloud = function() {
-  // Create an empty container that will hold the different parts of the cloud
+Cloud = function(){
   this.mesh = new THREE.Object3D();
-
-  // create a cube geometry;
-  // this shape will be duplicated to create the cloud
-  var geom = new THREE.BoxGeometry(20, 20, 20);
-
-  // create a material; a simple white material will do the trick
-  var mat = new THREE.MeshPhongMaterial({
-    color: Colors.white,
-  });
+  this.mesh.name = "cloud";
+  //var geom = new THREE.CubeGeometry(20,18,20);
+  var geom = new THREE.TetrahedronGeometry(8.5,2);
+ // var geom = new THREE.TetrahedronGeometry(4,4)
+ var mat = new THREE.MeshLambertMaterial({
+  color:Colors.white,
+  flatShading:true,
+  opacity: 0.8  
+});
 
   // duplicate the geometry a random number of times
   var nBlocs = 3 + Math.floor(Math.random() * 3);

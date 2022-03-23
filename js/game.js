@@ -80,18 +80,10 @@ var mousePos = {
   y: 0
 };
 
-// now handle the mousemove event
+// Logica de manejo de mouse
 function handleMouseMove(event) {
 
-  // here we are converting the mouse position value received 
-  // to a normalized value varying between -1 and 1;
-  // this is the formula for the horizontal axis:
-
   var tx = -1 + (event.clientX / WIDTH) * 2;
-
-  // for the vertical axis, we need to inverse the formula 
-  // because the 2D y-axis goes the opposite direction of the 3D y-axis
-
   var ty = 1 - (event.clientY / HEIGHT) * 2;
   mousePos = {
     x: tx,
@@ -101,7 +93,7 @@ function handleMouseMove(event) {
 }
 
 function handleWindowResize() {
-  // update height and width of the renderer and the camera
+  // Manje de ancho y alto del renderizado
   HEIGHT = window.innerHeight;
   WIDTH = window.innerWidth;
   renderer.setSize(WIDTH, HEIGHT);
@@ -110,12 +102,10 @@ function handleWindowResize() {
 }
 
 function createLights() {
-  // A hemisphere light is a gradient colored light; 
-  // the first parameter is the sky color, the second parameter is the ground color, 
-  // the third parameter is the intensity of the light
+  
   hemisphereLight = new THREE.HemisphereLight(0xaaaaaa, 0x000000, .9);
 
-  // an ambient light modifies the global color of a scene and makes the shadows softer
+  // La luz de ambiente modifica el color global de la escena y hace las sombras mas suaves
   ambientLight = new THREE.AmbientLight(0xdc8874, .5);
   scene.add(ambientLight);
 
@@ -123,13 +113,13 @@ function createLights() {
   // It acts like the sun, that means that all the rays produced are parallel. 
   shadowLight = new THREE.DirectionalLight(0xffffff, .9);
 
-  // Set the direction of the light  
+  // Direccion de la luz 
   shadowLight.position.set(150, 350, 350);
 
-  // Allow shadow casting 
+  // Permite castear sombra
   shadowLight.castShadow = true;
 
-  // define the visible area of the projected shadow
+  // define el area donde se vera la sombra
   shadowLight.shadow.camera.left = -400;
   shadowLight.shadow.camera.right = 400;
   shadowLight.shadow.camera.top = 400;
@@ -137,17 +127,17 @@ function createLights() {
   shadowLight.shadow.camera.near = 1;
   shadowLight.shadow.camera.far = 1000;
 
-  // define the resolution of the shadow; the higher the better, 
-  // but also the more expensive and less performant
+  // define la resolucion de la sombra; al mas alto es mejor, 
+  // pero costoso para la performance
   shadowLight.shadow.mapSize.width = 2048;
   shadowLight.shadow.mapSize.height = 2048;
 
-  // to activate the lights, just add them to the scene
+  // para activar las luces solo se deben agregar
   scene.add(hemisphereLight);
   scene.add(shadowLight);
 }
 
-// First let's define a Sea object :
+// Superficie
 Sea = function() {
   var geom = new THREE.CylinderGeometry(600, 600, 800, 40, 10);
   geom.applyMatrix4(new THREE.Matrix4().makeRotationX(-Math.PI / 2));

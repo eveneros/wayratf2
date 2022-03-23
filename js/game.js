@@ -141,21 +141,14 @@ function createLights() {
 Sea = function() {
   var geom = new THREE.CylinderGeometry(600, 600, 800, 40, 10);
   geom.applyMatrix4(new THREE.Matrix4().makeRotationX(-Math.PI / 2));
-
-  // important: by merging vertices we ensure the continuity of the waves
   geom.mergeVertices();
-
-  // get the vertices
   var l = geom.vertices.length;
 
-  // create an array to store new data associated to each vertex
   this.waves = [];
 
   for (var i = 0; i < l; i++) {
-    // get each vertex
+    
     var v = geom.vertices[i];
-
-    // store some data associated to it
     this.waves.push({
       y: v.y,
       x: v.x,
@@ -180,26 +173,18 @@ Sea = function() {
 
 }
 
-// now we create the function that will be called in each frame 
-// to update the position of the vertices to simulate the waves
-
 Sea.prototype.moveWaves = function() {
 
-  // get the vertices
   var verts = this.mesh.geometry.vertices;
   var l = verts.length;
 
   for (var i = 0; i < l; i++) {
     var v = verts[i];
-
-    // get the data associated to it
     var vprops = this.waves[i];
-
-    // update the position of the vertex
     v.x = vprops.x + Math.cos(vprops.ang) * vprops.amp;
     v.y = vprops.y + Math.sin(vprops.ang) * vprops.amp;
 
-    // increment the angle for the next frame
+    // incrementar el angulo para el siguiente frame
     vprops.ang += vprops.speed;
 
   }
@@ -219,11 +204,7 @@ var sea;
 
 function createSea() {
   sea = new Sea();
-
-  // push it a little bit at the bottom of the scene
   sea.mesh.position.y = -600;
-
-  // add the mesh of the sea to the scene
   scene.add(sea.mesh);
 }
 
@@ -291,24 +272,21 @@ Sky = function() {
     c.mesh.position.y = Math.sin(a) * h;
     c.mesh.position.x = Math.cos(a) * h;
 
-    // rotate the cloud according to its position
+    // rotar la nube de acuerdo a su posicion
     c.mesh.rotation.z = a + Math.PI / 2;
 
-    // for a better result, we position the clouds 
-    // at random depths inside of the scene
+    
+    // creando nubes en posiciones aleatorias
     c.mesh.position.z = -400 - Math.random() * 400;
 
-    // we also set a random scale for each cloud
+    // son de distinta escala
     var s = 1 + Math.random() * 2;
     c.mesh.scale.set(s, s, s);
 
-    // do not forget to add the mesh of each cloud in the scene
+    // Agregamos el mesh a la escena
     this.mesh.add(c.mesh);
   }
 }
-
-// Now we instantiate the sky and push its center a bit
-// towards the bottom of the screen
 
 var sky;
 
@@ -322,14 +300,13 @@ var AirPlane = function() {
 
   this.mesh = new THREE.Object3D();
 
-  // Create the cabin
+  // Crear la cabina
   var geomCockpit = new THREE.BoxGeometry(60, 50, 50, 1, 1, 1);
   var matCockpit = new THREE.MeshPhongMaterial({
     color: Colors.red,
     shading: THREE.FlatShading
   });
-  // we can access a specific vertex of a shape through 
-  // the vertices array, and then move its x, y and z property:
+  
   geomCockpit.vertices[4].y -= 10;
   geomCockpit.vertices[4].z += 20;
   geomCockpit.vertices[5].y -= 10;
@@ -344,7 +321,7 @@ var AirPlane = function() {
   cockpit.receiveShadow = true;
   this.mesh.add(cockpit);
 
-  // Create the engine
+  // Crear el motor
   var geomEngine = new THREE.BoxGeometry(20, 50, 50, 1, 1, 1);
   var matEngine = new THREE.MeshPhongMaterial({
     color: Colors.white,
@@ -356,7 +333,7 @@ var AirPlane = function() {
   engine.receiveShadow = true;
   this.mesh.add(engine);
 
-  // Create the tail
+  // Crear la cola
   var geomTailPlane = new THREE.BoxGeometry(15, 20, 5, 1, 1, 1);
   var matTailPlane = new THREE.MeshPhongMaterial({
     color: Colors.red,
@@ -368,7 +345,7 @@ var AirPlane = function() {
   tailPlane.receiveShadow = true;
   this.mesh.add(tailPlane);
 
-  // Create the wing
+  // Crear el piso
   var geomSideWing = new THREE.BoxGeometry(40, 8, 150, 1, 1, 1);
   var matSideWing = new THREE.MeshPhongMaterial({
     color: Colors.red,
@@ -379,7 +356,7 @@ var AirPlane = function() {
   sideWing.receiveShadow = true;
   this.mesh.add(sideWing);
 
-  // propeller
+  // propela
   var geomPropeller = new THREE.BoxGeometry(20, 10, 10, 1, 1, 1);
   var matPropeller = new THREE.MeshPhongMaterial({
     color: Colors.brown,
@@ -389,7 +366,7 @@ var AirPlane = function() {
   this.propeller.castShadow = true;
   this.propeller.receiveShadow = true;
 
-  // blades
+  // cuchillas
   var geomBlade = new THREE.BoxGeometry(1, 100, 20, 1, 1, 1);
   var matBlade = new THREE.MeshPhongMaterial({
     color: Colors.brownDark,
@@ -414,19 +391,19 @@ function createPlane() {
 }
 
 function loop() {
-  // Rotate the propeller, the sea and the sky
+  // Rotar propella, el mar y las nubes
   airplane.propeller.rotation.x += 0.3;
   sea.mesh.rotation.z += .005;
   sky.mesh.rotation.z += .01;
 
-  // update the plane on each frame
+  // actualiza el aeroplano en cada frame
   updatePlane();
   sea.moveWaves();
 
-  // render the scene
+  // crear escena
   renderer.render(scene, camera);
 
-  // call the loop function again
+  // funcion recursiva
   requestAnimationFrame(loop);
 }
 
@@ -435,10 +412,10 @@ function updatePlane() {
   var targetY = normalize(mousePos.y, -.75, .75, 25, 175);
   var targetX = normalize(mousePos.x, -.75, .75, -100, 100);
 
-  // Move the plane at each frame by adding a fraction of the remaining distance
+  // Mover el aero plano
   airplane.mesh.position.y += (targetY - airplane.mesh.position.y) * 0.1;
 
-  // Rotate the plane proportionally to the remaining distance
+  // Rotar eroplano proporcional a la distancia
   airplane.mesh.rotation.z = (targetY - airplane.mesh.position.y) * 0.0128;
   airplane.mesh.rotation.x = (airplane.mesh.position.y - targetY) * 0.0064;
 

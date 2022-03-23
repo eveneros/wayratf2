@@ -150,7 +150,7 @@ function createLights() {
 // First let's define a Sea object :
 Sea = function() {
   var geom = new THREE.CylinderGeometry(600, 600, 800, 40, 10);
-  geom.applyMatrix(new THREE.Matrix4().makeRotationX(-Math.PI / 2));
+  geom.applyMatrix4(new THREE.Matrix4().makeRotationX(-Math.PI / 2));
 
   // important: by merging vertices we ensure the continuity of the waves
   geom.mergeVertices();

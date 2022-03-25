@@ -50,7 +50,7 @@ function createScene() {
   aspectRatio = WIDTH / HEIGHT;
   fieldOfView = 60;
   nearPlane = 1;
-  farPlane = 950;
+  farPlane = 9500;
   camera = new THREE.PerspectiveCamera(
     fieldOfView,
     aspectRatio,
@@ -409,8 +409,8 @@ function loop() {
 
 function updatePlane() {
 
-  var targetY = normalize(mousePos.y, -.75, .75, 25, 175);
-  var targetX = normalize(mousePos.x, -.75, .75, -100, 100);
+  var targetY = normalize(mousePos.y, -.65, .35, 25, 175);
+  //var targetX = normalize(mousePos.x, -.75, .75, -100, 100);
 
   // Mover el aero plano
   airplane.mesh.position.y += (targetY - airplane.mesh.position.y) * 0.1;

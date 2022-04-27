@@ -224,63 +224,21 @@
                 <div class="nk-sidebar" data-content="sidebarMenu">
                     <div class="nk-sidebar-inner" data-simplebar>
                         <ul class="nk-ibx-menu">
-                            <li class="active">
-                                <a class="nk-ibx-menu-item" href="#">
-                                    <em class="icon ni ni-inbox"></em>
-                                    <span class="nk-ibx-menu-text">Inbox</span>
-                                    <span class="badge badge-pill badge-primary">8</span>
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a class="nk-ibx-menu-item" href="#">
-                                    <em class="icon ni ni-edit"></em>
-                                    <span class="nk-ibx-menu-text">Draft</span>
-                                    <span class="badge badge-pill badge-light">12</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nk-ibx-menu-item" href="#">
-                                    <em class="icon ni ni-star"></em>
-                                    <span class="nk-ibx-menu-text">Favourite</span>
-                                </a>
-                            </li>
                             <li>
                                 <a class="nk-ibx-menu-item" href="#">
                                     <em class="icon ni ni-send"></em>
-                                    <span class="nk-ibx-menu-text">Sent</span>
+                                    <span class="nk-ibx-menu-text">Distancia</span>
+                                    <span class="badge badge-pill badge-primary" id="distValue"></span>
                                 </a>
                             </li>
+                          
                             <li>
                                 <a class="nk-ibx-menu-item" href="#">
-                                    <em class="icon ni ni-report"></em>
-                                    <span class="nk-ibx-menu-text">Spam</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nk-ibx-menu-item" href="#">
+                                    
                                     <em class="icon ni ni-trash"></em>
-                                    <span class="nk-ibx-menu-text">Trash</span>
-                                    <span class="badge badge-pill badge-danger badge-dim">8</span>
+                                    <span class="nk-ibx-menu-text">Nivel</span>
+                                    <span class="badge badge-pill badge-danger badge-dim" id="levelValue">0</span>
                                 </a>
-                            </li>
-                            <li>
-                                <a class="nk-ibx-menu-item" href="#">
-                                    <em class="icon ni ni-emails"></em>
-                                    <span class="nk-ibx-menu-text">All Mails</span>
-                                </a>
-                            </li>
-                            <li>
-                                <div class="custom-control custom-control-lg custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                                    <label class="custom-control-label" for="customSwitch1">Switch</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="custom-control custom-control-lg custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="customSwitch2">
-                                    <label class="custom-control-label" for="customSwitch2">Switch</label>
-                                </div>
                             </li>
                             
                         </ul>
@@ -295,7 +253,7 @@
                        
                         
                         
-                        <button type="submit" class="btn btn-lg btn-primary">Update</button>
+                        <button class="btn btn-lg btn-primary" id="inicio">Play</button>
                     </div>
                 </div>
                 <!-- content @s -->
@@ -319,52 +277,22 @@
                                         <div class="col-md-4 col-xxl-4">
                                             <div class="card card-bordered card-full">
                                                 <div class="card-inner">
+                                                    <svg class="level-circle" id="levelCircle" viewbox="0 0 200 200">
+                                                        <circle id="levelCircleBgr" r="80" cx="100" cy="100" fill="none" stroke="#d1b790" stroke-width="24px" />
+                                                        <circle id="levelCircleStroke" r="80" cx="100" cy="100" fill="none" #f25346 stroke="#7FFF00" stroke-width="14px" stroke-dasharray="502" />
+                                                    </svg>
                                                     <div class="progress-list gy-3">
                                                         <div class="progress-wrap">
                                                             <div class="progress-text">
-                                                                <div class="progress-label">Strater Plan</div>
-                                                                <div class="progress-amount">58%</div>
+                                                                <div class="progress-label">Energía</div>
+                                                                <div class="progress-amount" id="energyValue">0%</div>
                                                             </div>
-                                                            <div class="progress progress-md">
-                                                                <div class="progress-bar" data-progress="58"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="progress-wrap">
-                                                            <div class="progress-text">
-                                                                <div class="progress-label">Silver Plan</div>
-                                                                <div class="progress-amount">18.49%</div>
-                                                            </div>
-                                                            <div class="progress progress-md">
-                                                                <div class="progress-bar bg-orange" data-progress="18.49"></div>
+                                                            <div class="score__value score__value--energy" id="energyValue">
+                                                            
+                                                                <span class="energy-bar" id="energyBar"></span>
                                                             </div>
                                                         </div>
-                                                        <div class="progress-wrap">
-                                                            <div class="progress-text">
-                                                                <div class="progress-label">Dimond Plan</div>
-                                                                <div class="progress-amount">16%</div>
-                                                            </div>
-                                                            <div class="progress progress-md">
-                                                                <div class="progress-bar bg-teal" data-progress="16"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="progress-wrap">
-                                                            <div class="progress-text">
-                                                                <div class="progress-label">Platinam Plan</div>
-                                                                <div class="progress-amount">29%</div>
-                                                            </div>
-                                                            <div class="progress progress-md">
-                                                                <div class="progress-bar bg-pink" data-progress="29"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="progress-wrap">
-                                                            <div class="progress-text">
-                                                                <div class="progress-label">Vibranium Plan</div>
-                                                                <div class="progress-amount">33%</div>
-                                                            </div>
-                                                            <div class="progress progress-md">
-                                                                <div class="progress-bar bg-azure" data-progress="33"></div>
-                                                            </div>
-                                                        </div>
+                                                        
                                                     </div>
                                                     <div class="device-status-group">
                                                         <div class="device-status-data">
@@ -386,6 +314,10 @@
                                                             <div class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>25.3%</div>
                                                         </div>
                                                     </div>
+                                                    
+                                                    
+                                                    
+                                                   
                                                 </div>
                                                
                                             </div>
@@ -513,9 +445,7 @@
     <script src="./assets/js/p5.min.js"></script>
 	<script src="./assets/js/p5.dom.min.js"></script>
     <script src="./assets/js/TweenMax.min.js"></script>
-	<script src="./assets/js/three.min.js"></script>
 	<script src="./assets/js/ThreeCSG.js"></script>
-	<script src="./assets/js/Sky.js" ></script>
 	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.0.0/dist/tf.min.js"></script>
 	<!-- <script type="text/javascript" src="tf.min.js"></script> -->
 	<script src="./assets/js/geneticAlgorithm.js"></script>
@@ -524,6 +454,7 @@
     <script src="./assets/js/scripts.js?ver=2.4.0"></script>
     <script src="./assets/js/charts/gd-invest.js?ver=2.4.0"></script>
     <script src="./assets/js/three.min.js"></script>
+    <script src="./assets/js/Sky.js" ></script>
     <script src="./assets/js/game.js"></script>
     <script src="./assets/js/others.js"></script>
 </body>

@@ -128,8 +128,10 @@ var HEIGHT, WIDTH,
 
 function createScene() {
 
-  HEIGHT = window.innerHeight;
-  WIDTH = window.innerWidth;
+  HEIGHT = 500;
+  //HEIGHT = window.innerHeight;
+  WIDTH = 520;
+  //WIDTH = window.innerWidth;
 
   scene = new THREE.Scene();
   aspectRatio = WIDTH / HEIGHT;
@@ -163,8 +165,8 @@ function createScene() {
 // MOUSE AND SCREEN EVENTS
 
  function handleWindowResize() {
-  HEIGHT = window.innerHeight;
-  WIDTH = window.innerWidth;
+   //HEIGHT = window.innerHeight;
+  //WIDTH = window.innerWidth;
   renderer.setSize(WIDTH, HEIGHT);
   camera.aspect = WIDTH / HEIGHT;
   camera.updateProjectionMatrix();

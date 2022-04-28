@@ -1199,7 +1199,7 @@ function init(event){
   createScene();
   createLights();
   sun();
-  createMountainsBack();
+  //createMountainsBack();
   
   
   createPlane();

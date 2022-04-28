@@ -961,7 +961,7 @@ function createEnnemies(){
 function createMountainsBack(){
   // Load cloud texture
   var loader = new THREE.TextureLoader();
- loader.load("assets/images/mountain5.png", function(texture) {
+ loader.load("images/mountain5.png", function(texture) {
    cloudGeo = new THREE.PlaneBufferGeometry(8000,2000);
    cloudMaterial = new THREE.MeshLambertMaterial({
      map: texture,

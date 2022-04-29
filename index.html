@@ -223,6 +223,12 @@
                 <!-- main header @e -->
                 <div class="nk-sidebar" data-content="sidebarMenu">
                     <div class="nk-sidebar-inner" data-simplebar>
+                        <div class="form-group">
+                            <label class="form-label" for="numeroNpcs">Cantidad de Npcs</label>
+                            <div class="form-control-wrap">
+                                <input type="text" class="form-control" id="numeroNpcs" placeholder="Cantidad de Npcs" value="5">
+                            </div>
+                        </div>
                         <ul class="nk-ibx-menu">
                             <li>
                                 <a class="nk-ibx-menu-item" href="#">
@@ -235,21 +241,14 @@
                             <li>
                                 <a class="nk-ibx-menu-item" href="#">
                                     
-                                    <em class="icon ni ni-trash"></em>
-                                    <span class="nk-ibx-menu-text">Nivel</span>
+                                    <em class="icon ni ni-user"></em>
+                                    <span class="nk-ibx-menu-text">Generacion</span>
                                     <span class="badge badge-pill badge-danger badge-dim" id="levelValue">0</span>
                                 </a>
                             </li>
                             
                         </ul>
-                        <div class="form-group">
-                            <label class="form-label">Number Spinner Basic</label>
-                            <div class="form-control-wrap number-spinner-wrap">
-                                <button class="btn btn-icon btn-outline-light number-spinner-btn number-minus" data-number="minus"><em class="icon ni ni-minus"></em></button>
-                                <input type="number" class="form-control number-spinner" value="0">
-                                <button class="btn btn-icon btn-outline-light number-spinner-btn number-plus" data-number="plus"><em class="icon ni ni-plus"></em></button>
-                            </div>
-                        </div> 
+                       
                        
                         
                         
@@ -277,6 +276,14 @@
                                         <div class="col-md-4 col-xxl-4">
                                             <div class="card card-bordered card-full">
                                                 <div class="card-inner">
+                                                    <div class="form-group">
+                                                        <label class="form-label">Dificultad</label>
+                                                        <div class="form-control-wrap number-spinner-wrap">
+                                                            <button class="btn btn-icon btn-outline-light number-spinner-btn number-minus" data-number="minus"><em class="icon ni ni-minus"></em></button>
+                                                            <input type="number" class="form-control number-spinner" value="0" id="numeroEnemigos">
+                                                            <button class="btn btn-icon btn-outline-light number-spinner-btn number-plus" data-number="plus"><em class="icon ni ni-plus"></em></button>
+                                                        </div>
+                                                    </div> 
                                                     <svg class="level-circle" id="levelCircle" viewbox="0 0 200 200">
                                                         <circle id="levelCircleBgr" r="80" cx="100" cy="100" fill="none" stroke="#d1b790" stroke-width="24px" />
                                                         <circle id="levelCircleStroke" r="80" cx="100" cy="100" fill="none" #f25346 stroke="#7FFF00" stroke-width="14px" stroke-dasharray="502" />
@@ -442,6 +449,10 @@
     </div>
     <!-- app-root @e -->
     <!-- JavaScript -->
+   
+    <script src="./assets/js/bundle.js?ver=2.4.0"></script>
+    <script src="./assets/js/scripts.js?ver=2.4.0"></script>
+    <script src="./assets/js/charts/gd-invest.js?ver=2.4.0"></script>
     <script src="./assets/js/p5.min.js"></script>
 	<script src="./assets/js/p5.dom.min.js"></script>
     <script src="./assets/js/TweenMax.min.js"></script>
@@ -450,9 +461,6 @@
 	<!-- <script type="text/javascript" src="tf.min.js"></script> -->
 	<script src="./assets/js/geneticAlgorithm.js"></script>
 	<script src="./assets/js/neuralNetwork.js"></script>
-    <script src="./assets/js/bundle.js?ver=2.4.0"></script>
-    <script src="./assets/js/scripts.js?ver=2.4.0"></script>
-    <script src="./assets/js/charts/gd-invest.js?ver=2.4.0"></script>
     <script src="./assets/js/three.min.js"></script>
     <script src="./assets/js/Sky.js" ></script>
     <script src="./assets/js/game.js"></script>

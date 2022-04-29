@@ -708,7 +708,7 @@ EnnemiesHolder = function (){
 
 EnnemiesHolder.prototype.spawnEnnemies = function(){
   var nEnnemies = game.level;
-
+  $("#numeroEnemigos").val(game.level);
   for (var i=0; i<nEnnemies; i++){
     var ennemy;
     if (ennemiesPool.length) {
@@ -1219,4 +1219,4 @@ function init(event){
   loop();
 }
 
-window.addEventListener('load', init, false);
+//window.addEventListener('load', init, false);

@@ -1,12 +1,14 @@
 // The number of birds in each population
-const totalPopulation = 25;
+//const totalPopulation = 25;
+var totalPopulation = 5;
 var p5=new p5();
 function createNextGeneration() {
 	
 	normalizeFitness(allBirds);
 	aliveBirds = generate(allBirds).slice();
 	//allBirds = aliveBirds.slice();
-	for (let i = 0; i < aliveBirds.length; i++) {
+	//for (let i = 0; i < aliveBirds.length; i++) {
+	for (let i = 0; i < totalPopulation; i++) {
 		
     let bird = aliveBirds[i];
     bird.mesh.scale.set(.25,.25,.25);

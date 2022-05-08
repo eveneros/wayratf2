@@ -1,18 +1,470 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx" class="js">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wayra TF</title>
-    <link rel="stylesheet" href="css/game.css">
-    
-    
+   
+    <meta charset="utf-8">
+    <meta name="author" content="EVeneros">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="./images/favicon.png">
+    <!-- Page Title  -->
+    <title>WayraTF</title>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href="./assets/css/dashlite.css?ver=2.4.0">
+    <link id="skin-default" rel="stylesheet" href="./assets/css/theme.css?ver=2.4.0">
+    <link rel="stylesheet" href="./assets/css/game.css">
 </head>
-<body>  		
-        <div class="world" id="world"></div>   
-        <script src="js/three.min.js"></script>
-        <script src="js/game.js"></script>
-    
+
+<body class="nk-body npc-default has-apps-sidebar has-sidebar dark-mode">
+    <div class="nk-app-root">
+        <div class="nk-apps-sidebar is-dark">
+            
+            <div class="nk-sidebar-element">
+                <div class="nk-sidebar-body">
+                    <div class="nk-sidebar-content" data-simplebar>
+                        
+                                
+                            
+                        
+                        <div class="nk-sidebar-menu">
+                            <!-- Menu -->
+                            <ul class="nk-menu apps-menu">
+                                
+                                <li>
+                                    
+                                
+                                        <span class="lead-text">WayraTF</span>
+                                        <span class="sub-text">EVeneros</span>
+                                    
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="html/apps/mailbox.html" class="nk-menu-link" title="Mailbox">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-inbox"></em></span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="html/apps/messages.html" class="nk-menu-link" title="Messages">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-chat"></em></span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="html/apps/file-manager.html" class="nk-menu-link" title="File Manager">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-folder"></em></span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="html/apps/chats.html" class="nk-menu-link" title="Chats">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-chat-circle"></em></span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="html/apps/calendar.html" class="nk-menu-link" title="Calendar">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-calendar"></em></span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="html/apps/kanban.html" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-template"></em></span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-hr"></li>
+                                
+                            </ul>
+                        </div>
+                        <div class="nk-sidebar-footer">
+                            <ul class="nk-menu nk-menu-md">
+                                <li class="nk-menu-item">
+                                    <a href="#" class="nk-menu-link" title="Settings">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-setting"></em></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- main @s -->
+        <div class="nk-main ">
+            <!-- wrap @s -->
+            <div class="nk-wrap ">
+                <!-- main header @s -->
+                <div class="nk-header nk-header-fixed is-light">
+                    <div class="container-fluid">
+                        <div class="nk-header-wrap">
+                            <div class="nk-menu-trigger d-xl-none ml-n1">
+                                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
+                            </div>
+                            
+                            <div class="nk-header-wrap">
+                                <div class="nk-menu-trigger d-xl-none ml-n1">
+                                    <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
+                                </div>
+                                <div class="nk-header-brand d-xl-none">
+                                    <a href="html/index.html" class="logo-link">
+                                        <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
+                                        <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                                    </a>
+                                </div><!-- .nk-header-brand -->
+                                <div class="nk-header-news d-none d-xl-block">
+                                    
+                                    <div class="nk-news-list">
+                                        <a class="nk-news-item" href="#">
+                                            <div class="nk-news-icon">
+                                                <em class="icon ni ni-card-view"></em>
+                                            </div>
+                                            <div class="nk-news-text">
+                                                <p>Do you know the latest update of 2019? <span> A overview of our is now available on YouTube</span></p>
+                                                <em class="icon ni ni-external"></em>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div><!-- .nk-header-news -->
+                                <div class="nk-header-tools">
+                                    <ul class="nk-quick-nav">
+                                        
+
+                                        <li>
+                                            <div class="drodown">
+                                                <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-toggle="dropdown" aria-expanded="false"><em class="d-none d-sm-inline icon ni ni-calender-date"></em><span><span class="d-none d-md-inline">Last</span> 30 Days</span><em class="dd-indc icon ni ni-chevron-right"></em></a>
+                                                <div class="dropdown-menu dropdown-menu-right" style="">
+                                                    <ul class="link-list-opt no-bdr">
+                                                        <li><a href="#"><span>Last 30 Days</span></a></li>
+                                                        <li><a href="#"><span>Last 6 Months</span></a></li>
+                                                        <li><a href="#"><span>Last 1 Years</span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        
+                                        
+                                        <li class="dropdown notification-dropdown mr-n1">
+                                            <a href="#" class="dropdown-toggle nk-quick-nav-icon" data-toggle="dropdown">
+                                                <div class="icon-status icon-status-info"><em class="icon ni ni-bell"></em></div>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right dropdown-menu-s1">
+                                                <div class="dropdown-head">
+                                                    <span class="sub-title nk-dropdown-title">Notifications</span>
+                                                    <a href="#">Mark All as Read</a>
+                                                </div>
+                                                <div class="dropdown-body">
+                                                    <div class="nk-notification">
+                                                        <div class="nk-notification-item dropdown-inner">
+                                                            <div class="nk-notification-icon">
+                                                                <em class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
+                                                            </div>
+                                                            <div class="nk-notification-content">
+                                                                <div class="nk-notification-text">You have requested to <span>Widthdrawl</span></div>
+                                                                <div class="nk-notification-time">2 hrs ago</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="nk-notification-item dropdown-inner">
+                                                            <div class="nk-notification-icon">
+                                                                <em class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
+                                                            </div>
+                                                            <div class="nk-notification-content">
+                                                                <div class="nk-notification-text">Your <span>Deposit Order</span> is placed</div>
+                                                                <div class="nk-notification-time">2 hrs ago</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="nk-notification-item dropdown-inner">
+                                                            <div class="nk-notification-icon">
+                                                                <em class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
+                                                            </div>
+                                                            <div class="nk-notification-content">
+                                                                <div class="nk-notification-text">You have requested to <span>Widthdrawl</span></div>
+                                                                <div class="nk-notification-time">2 hrs ago</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="nk-notification-item dropdown-inner">
+                                                            <div class="nk-notification-icon">
+                                                                <em class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
+                                                            </div>
+                                                            <div class="nk-notification-content">
+                                                                <div class="nk-notification-text">Your <span>Deposit Order</span> is placed</div>
+                                                                <div class="nk-notification-time">2 hrs ago</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="nk-notification-item dropdown-inner">
+                                                            <div class="nk-notification-icon">
+                                                                <em class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
+                                                            </div>
+                                                            <div class="nk-notification-content">
+                                                                <div class="nk-notification-text">You have requested to <span>Widthdrawl</span></div>
+                                                                <div class="nk-notification-time">2 hrs ago</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="nk-notification-item dropdown-inner">
+                                                            <div class="nk-notification-icon">
+                                                                <em class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
+                                                            </div>
+                                                            <div class="nk-notification-content">
+                                                                <div class="nk-notification-text">Your <span>Deposit Order</span> is placed</div>
+                                                                <div class="nk-notification-time">2 hrs ago</div>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- .nk-notification -->
+                                                </div><!-- .nk-dropdown-body -->
+                                                <div class="dropdown-foot center">
+                                                    <a href="#">View All</a>
+                                                </div>
+                                            </div>
+                                        </li><!-- .dropdown -->
+                                    </ul><!-- .nk-quick-nav -->
+                                </div><!-- .nk-header-tools -->
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- main header @e -->
+                <div class="nk-sidebar" data-content="sidebarMenu">
+                    <div class="nk-sidebar-inner" data-simplebar>
+                        <div class="form-group">
+                            <label class="form-label" for="numeroNpcs">Cantidad de Npcs</label>
+                            <div class="form-control-wrap">
+                                <input type="text" class="form-control" id="numeroNpcs" placeholder="Cantidad de Npcs" value="1">
+                            </div>
+                        </div>
+                        <ul class="nk-ibx-menu">
+                            <li>
+                                <a class="nk-ibx-menu-item" href="#">
+                                    <em class="icon ni ni-send"></em>
+                                    <span class="nk-ibx-menu-text">Distancia</span>
+                                    <span class="badge badge-pill badge-primary" id="distValue"></span>
+                                </a>
+                            </li>
+                          
+                            <li>
+                                <a class="nk-ibx-menu-item" href="#">
+                                    
+                                    <em class="icon ni ni-user"></em>
+                                    <span class="nk-ibx-menu-text">Generacion</span>
+                                    <span class="badge badge-pill badge-danger badge-dim" id="levelValue">0</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                       
+                       
+                        
+                        
+                        <button class="btn btn-lg btn-primary" id="inicio">Play</button>
+                    </div>
+                </div>
+                <!-- content @s -->
+                <div class="nk-content ">
+                    <div class="container-fluid">
+                        <div class="nk-content-inner">
+                            <div class="nk-content-body">
+                                
+                                <div class="nk-block">
+                                    <div class="row g-gs">
+                                        
+
+                                        <div class="col-md-8 col-xxl-8">
+                                            <div class="card card-bordered card-full">
+                                                <div class="card-inner nk-content-inner">
+                                                    
+                                                    <div class="world" id="world"></div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-xxl-4">
+                                            <div class="card card-bordered card-full">
+                                                <div class="card-inner">
+                                                    <div class="form-group">
+                                                        <label class="form-label">Dificultad</label>
+                                                        <div class="form-control-wrap number-spinner-wrap">
+                                                            <button class="btn btn-icon btn-outline-light number-spinner-btn number-minus" data-number="minus"><em class="icon ni ni-minus"></em></button>
+                                                            <input type="number" class="form-control number-spinner" value="0" id="numeroEnemigos">
+                                                            <button class="btn btn-icon btn-outline-light number-spinner-btn number-plus" data-number="plus"><em class="icon ni ni-plus"></em></button>
+                                                        </div>
+                                                    </div> 
+                                                    <svg class="level-circle" id="levelCircle" viewbox="0 0 200 200">
+                                                        <circle id="levelCircleBgr" r="80" cx="100" cy="100" fill="none" stroke="#d1b790" stroke-width="24px" />
+                                                        <circle id="levelCircleStroke" r="80" cx="100" cy="100" fill="none" #f25346 stroke="#7FFF00" stroke-width="14px" stroke-dasharray="502" />
+                                                    </svg>
+                                                    <div class="progress-list gy-3">
+                                                        <div class="progress-wrap">
+                                                            <div class="progress-text">
+                                                                <div class="progress-label">Energía</div>
+                                                                <div class="progress-amount" id="energyValue">0%</div>
+                                                            </div>
+                                                            <div class="score__value score__value--energy" id="energyValue">
+                                                            
+                                                                <span class="energy-bar" id="energyBar"></span>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="device-status-group">
+                                                        <div class="device-status-data">
+                                                            <em data-color="#798bff" class="icon ni ni-monitor" style="color: rgb(121, 139, 255);"></em>
+                                                            <div class="title">Desktop</div>
+                                                            <div class="amount">84.5%</div>
+                                                            <div class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.5%</div>
+                                                        </div>
+                                                        <div class="device-status-data">
+                                                            <em data-color="#baaeff" class="icon ni ni-mobile" style="color: rgb(186, 174, 255);"></em>
+                                                            <div class="title">Mobile</div>
+                                                            <div class="amount">14.2%</div>
+                                                            <div class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>133.2%</div>
+                                                        </div>
+                                                        <div class="device-status-data">
+                                                            <em data-color="#7de1f8" class="icon ni ni-tablet" style="color: rgb(125, 225, 248);"></em>
+                                                            <div class="title">Tablet</div>
+                                                            <div class="amount">1.3%</div>
+                                                            <div class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>25.3%</div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                    
+                                                   
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card card-bordered card-full">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group align-start mb-0">
+                                                        <div class="card-title">
+                                                            <h6 class="subtitle">Total Deposit</h6>
+                                                        </div>
+                                                        <div class="card-tools">
+                                                            <em class="card-hint icon ni ni-help-fill" data-toggle="tooltip" data-placement="left" title="Total Deposited"></em>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-amount">
+                                                        <span class="amount"> 49,595.34 <span class="currency currency-usd">USD</span>
+                                                        </span>
+                                                        <span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>1.93%</span>
+                                                    </div>
+                                                    <div class="invest-data">
+                                                        <div class="invest-data-amount g-2">
+                                                            <div class="invest-data-history">
+                                                                <div class="title">This Month</div>
+                                                                <div class="amount">2,940.59 <span class="currency currency-usd">USD</span></div>
+                                                            </div>
+                                                            <div class="invest-data-history">
+                                                                <div class="title">This Week</div>
+                                                                <div class="amount">1,259.28 <span class="currency currency-usd">USD</span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="invest-data-ck">
+                                                            <canvas class="iv-data-chart" id="totalDeposit"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .card -->
+                                        </div><!-- .col -->
+                                        <div class="col-md-4">
+                                            <div class="card card-bordered card-full">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group align-start mb-0">
+                                                        <div class="card-title">
+                                                            <h6 class="subtitle">Total Withdraw</h6>
+                                                        </div>
+                                                        <div class="card-tools">
+                                                            <em class="card-hint icon ni ni-help-fill" data-toggle="tooltip" data-placement="left" title="Total Withdraw"></em>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-amount">
+                                                        <span class="amount"> 49,595.34 <span class="currency currency-usd">USD</span>
+                                                        </span>
+                                                        <span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>1.93%</span>
+                                                    </div>
+                                                    <div class="invest-data">
+                                                        <div class="invest-data-amount g-2">
+                                                            <div class="invest-data-history">
+                                                                <div class="title">This Month</div>
+                                                                <div class="amount">2,940.59 <span class="currency currency-usd">USD</span></div>
+                                                            </div>
+                                                            <div class="invest-data-history">
+                                                                <div class="title">This Week</div>
+                                                                <div class="amount">1,259.28 <span class="currency currency-usd">USD</span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="invest-data-ck">
+                                                            <canvas class="iv-data-chart" id="totalWithdraw"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .card -->
+                                        </div><!-- .col -->
+                                        <div class="col-md-4">
+                                            <div class="card card-bordered  card-full">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group align-start mb-0">
+                                                        <div class="card-title">
+                                                            <h6 class="subtitle">Balance in Account</h6>
+                                                        </div>
+                                                        <div class="card-tools">
+                                                            <em class="card-hint icon ni ni-help-fill" data-toggle="tooltip" data-placement="left" title="Total Balance in Account"></em>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-amount">
+                                                        <span class="amount"> 79,358.50 <span class="currency currency-usd">USD</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="invest-data">
+                                                        <div class="invest-data-amount g-2">
+                                                            <div class="invest-data-history">
+                                                                <div class="title">This Month</div>
+                                                                <div class="amount">2,940.59 <span class="currency currency-usd">USD</span></div>
+                                                            </div>
+                                                            <div class="invest-data-history">
+                                                                <div class="title">This Week</div>
+                                                                <div class="amount">1,259.28 <span class="currency currency-usd">USD</span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="invest-data-ck">
+                                                            <canvas class="iv-data-chart" id="totalBalance"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .card -->
+                                        </div><!-- .col -->
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content @e -->
+            </div>
+            <!-- wrap @e -->
+        </div>
+        <!-- main @e -->
+    </div>
+    <!-- app-root @e -->
+    <!-- JavaScript -->
+   
+    <script src="./assets/js/bundle.js?ver=2.4.0"></script>
+    <script src="./assets/js/scripts.js?ver=2.4.0"></script>
+    <script src="./assets/js/charts/gd-invest.js?ver=2.4.0"></script>
+    <script src="./assets/js/p5.min.js"></script>
+	<script src="./assets/js/p5.dom.min.js"></script>
+    <script src="./assets/js/TweenMax.min.js"></script>
+	<script src="./assets/js/ThreeCSG.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.0.0/dist/tf.min.js"></script>
+	<!-- <script type="text/javascript" src="tf.min.js"></script> -->
+	<script src="./assets/js/geneticAlgorithm.js"></script>
+	<script src="./assets/js/neuralNetwork.js"></script>
+    <script src="./assets/js/three.min.js"></script>
+    <script src="./assets/js/Sky.js" ></script>
+    <script src="./assets/js/game.js"></script>
+    <script src="./assets/js/others.js"></script>
 </body>
+
 </html>

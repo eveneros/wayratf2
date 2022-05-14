@@ -2,8 +2,8 @@
 $(document).ready(function() {
 	setCursorByID("world","crosshair");
    totalPopulation=$("#numeroNpcs").val();
-   init();
-   pausegame();
+  // init();
+  // pausegame();
  });
 
  function pausegame(){
@@ -15,10 +15,26 @@ $(document).ready(function() {
 		}
 
         $("#inicio").click(function(){
-         resetGame();
+         //resetGame();
+		 //totalPopulation = $("#numeroNpcs").val();
+		 if(game==null){
+			init();
+			$("#inicio").html('Pause');
+		 }
 			
+			else if (game.status=="playing"){
+				game.status="waitingReplay";
+				$("#inicio").html('Play');
+				}
+			else if (game.status=="waitingReplay"){
+				game.status="playing";
+	
+				}
 			
 		});
+		$("#numeroNpcs").on("change keyup paste click", function(){
+			totalPopulation=$("#numeroNpcs").val();
+			});
         function restartgame(){
 			if (game.status=="playing" ){
 			game.status="waitingReplay";

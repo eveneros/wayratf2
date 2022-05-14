@@ -223,10 +223,11 @@
                 <!-- main header @e -->
                 <div class="nk-sidebar" data-content="sidebarMenu">
                     <div class="nk-sidebar-inner" data-simplebar>
+                         
                         <div class="form-group">
                             <label class="form-label" for="numeroNpcs">Cantidad de Npcs</label>
                             <div class="form-control-wrap">
-                                <input type="text" class="form-control" id="numeroNpcs" placeholder="Cantidad de Npcs" value="1">
+                                <input type="number" class="form-control" id="numeroNpcs" placeholder="Cantidad de Npcs" value="1" min="1" max="100" step="1">
                             </div>
                         </div>
                         <ul class="nk-ibx-menu">
@@ -234,9 +235,10 @@
                                 <a class="nk-ibx-menu-item" href="#">
                                     <em class="icon ni ni-send"></em>
                                     <span class="nk-ibx-menu-text">Distancia</span>
-                                    <span class="badge badge-pill badge-primary" id="distValue"></span>
+                                    <span class="badge badge-pill badge-primary" id="distValue">0</span>
                                 </a>
                             </li>
+
                           
                             <li>
                                 <a class="nk-ibx-menu-item" href="#">
@@ -245,6 +247,22 @@
                                     <span class="nk-ibx-menu-text">Generacion</span>
                                     <span class="badge badge-pill badge-danger badge-dim" id="levelValue">0</span>
                                 </a>
+                            </li>
+                            <li>
+                                <a class="nk-ibx-menu-item" href="#">
+                                    
+                                    
+                                    <span class="nk-ibx-menu-text">Level</span>
+                                    <svg class="level-circle" id="levelCircle" viewbox="0 0 200 200">
+                                        <circle id="levelCircleBgr" r="80" cx="100" cy="100" fill="none" stroke="#d1b790" stroke-width="24px" />
+                                        <circle id="levelCircleStroke" r="80" cx="100" cy="100" fill="none" #f25346 stroke="#7FFF00" stroke-width="14px" stroke-dasharray="502" />
+                                    </svg>
+                                    <span class="badge badge-pill badge-primary" id="difficultyLevel">0</span>
+                                    
+                                </a>
+                            </li>
+                            <li>
+                                
                             </li>
                             
                         </ul>
@@ -276,18 +294,8 @@
                                         <div class="col-md-4 col-xxl-4">
                                             <div class="card card-bordered card-full">
                                                 <div class="card-inner">
-                                                    <div class="form-group">
-                                                        <label class="form-label">Dificultad</label>
-                                                        <div class="form-control-wrap number-spinner-wrap">
-                                                            <button class="btn btn-icon btn-outline-light number-spinner-btn number-minus" data-number="minus"><em class="icon ni ni-minus"></em></button>
-                                                            <input type="number" class="form-control number-spinner" value="0" id="numeroEnemigos">
-                                                            <button class="btn btn-icon btn-outline-light number-spinner-btn number-plus" data-number="plus"><em class="icon ni ni-plus"></em></button>
-                                                        </div>
-                                                    </div> 
-                                                    <svg class="level-circle" id="levelCircle" viewbox="0 0 200 200">
-                                                        <circle id="levelCircleBgr" r="80" cx="100" cy="100" fill="none" stroke="#d1b790" stroke-width="24px" />
-                                                        <circle id="levelCircleStroke" r="80" cx="100" cy="100" fill="none" #f25346 stroke="#7FFF00" stroke-width="14px" stroke-dasharray="502" />
-                                                    </svg>
+                                                    
+                                                    
                                                     <div class="progress-list gy-3">
                                                         <div class="progress-wrap">
                                                             <div class="progress-text">

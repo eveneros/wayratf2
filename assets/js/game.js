@@ -1050,9 +1050,7 @@ function loop(){
     if (Math.floor(game.distance)%game.distanceForLevelUpdate == 0 && Math.floor(game.distance) > game.levelLastUpdate){
       game.levelLastUpdate = Math.floor(game.distance);
       game.level++;
-      //fieldLevel.innerHTML = Math.floor(game.level);
-      
-
+      difficultyLevel.innerHTML = Math.floor(game.level).toString();
       game.targetBaseSpeed = game.initSpeed + game.incrementSpeedByLevel*game.level
     }
 
@@ -1194,6 +1192,7 @@ function init(event){
   energyBar = document.getElementById("energyBar");
   replayMessage = document.getElementById("replayMessage");
   fieldLevel = document.getElementById("levelValue");
+  difficultyLevel = document.getElementById("difficultyLevel");
   levelCircle = document.getElementById("levelCircleStroke");
   resetGame();
   createScene();

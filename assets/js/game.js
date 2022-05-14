@@ -128,9 +128,9 @@ var HEIGHT, WIDTH,
 
 function createScene() {
 
-  HEIGHT = 500;
+  HEIGHT = 400;
   //HEIGHT = window.innerHeight;
-  WIDTH = 520;
+  WIDTH = 800;
   //WIDTH = window.innerWidth;
 
   scene = new THREE.Scene();

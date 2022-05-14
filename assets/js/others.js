@@ -4,6 +4,7 @@ $(document).ready(function() {
    totalPopulation=$("#numeroNpcs").val();
   // init();
   // pausegame();
+  $("#numeroNpcs").focus();
  });
 
  function pausegame(){
@@ -19,12 +20,12 @@ $(document).ready(function() {
 		 //totalPopulation = $("#numeroNpcs").val();
 		 if(game==null){
 			init();
-			$("#inicio").html('Pause');
+			$("#inicio").html('Pausar Simulación');
 		 }
 			
 			else if (game.status=="playing"){
 				game.status="waitingReplay";
-				$("#inicio").html('Play');
+				$("#inicio").html('Continuar Simulación');
 				}
 			else if (game.status=="waitingReplay"){
 				game.status="playing";

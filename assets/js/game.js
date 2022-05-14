@@ -128,7 +128,7 @@ var HEIGHT, WIDTH,
 
 function createScene() {
 
-  HEIGHT = 400;
+  HEIGHT = 450;
   //HEIGHT = window.innerHeight;
   WIDTH = 800;
   //WIDTH = window.innerWidth;

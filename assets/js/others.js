@@ -13,25 +13,25 @@ $(document).ready(function() {
     }
     return new Uint8Array( out );
 }
- $(document).ready(function() {
+
+$(document).ready(function() {
   $("#btnSave").click(function(){
-	//alert("click");
-	//let pCinco=new p5();
+	 
     var birdToSave=aliveBirds;
 	   var json=birdToSave[0].brain.serialize();
 
 	//    pCinco.saveJson(json,'plane.json');
 	//   console.log(birdToSave);
-	/* $.ajax
-    ({
-        type: "GET",
-        dataType : 'json',
-        async: false,
-        url: 'save.php',
-        data: { data: json },
-        function (res) {
-		alert(res); }
-    }); */
+	// $.ajax
+    // ({
+    //     type: "GET",
+    //     dataType : 'json',
+    //     async: false,
+    //     url: 'save.php',
+    //     data: { data: json },
+    //     function (res) {
+	// 	alert(res); }
+    // }); 
 
 	//$.post("save.php", {data: json },function(data){alert(data);});
     json=encode(json);
@@ -46,7 +46,25 @@ $(document).ready(function() {
     
     var event = document.createEvent( 'MouseEvents' );
     event.initMouseEvent( 'click', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
-    link.dispatchEvent( event );
+    link.dispatchEvent( event ); 
+
+  }); 
+
+  $("#btnSaveModel").click(function(){
+	 
+    var birdToSave=aliveBirds;
+	birdToSave[0].brain.model.save('localstorage://BirdBrain');
+	console.log("Model Saved to LocalStorage");
+	  // var json=birdToSave[0].brain.serialize();
+	  // aliveBirds[0].brain.model.save('downloads://my-model');
+	   
+
+  }); 
+
+  $("#btnLoad").click(function(){
+	 
+    tf.loadLayersModel('localstorage://BirdBrain');
+	console.log("Model Loaded from LocalStorage");
 
   }); 
 });

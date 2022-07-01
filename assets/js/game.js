@@ -1,4 +1,5 @@
 tf.setBackend("cpu");
+//tf.loadLayersModel('localstorage://BirdBrain');//load model from localstorage
 
 let pipes = [];
 let frameCounter = 0;
@@ -336,11 +337,13 @@ var AirPlane = function(brain){
 		if (brain instanceof NeuralNetwork) {
 			this.brain = brain.copy();
 			this.brain.mutate(0.1);
-      //console.log("copiando...");
+      console.log("copiando...");
 		} else {
 			// Parameters are number of inputs, number of units in hidden Layer, number of outputs
+      
 			this.brain = new NeuralNetwork(5, 128, 1);
-      console.log("creando cerebro nuevo...");
+      
+      console.log("creando cerebro...");
 		}
 
   

@@ -3,6 +3,10 @@
 
 // bias:
 //model.layers[0].getWeights()[1].print()
+
+
+//save:
+//aliveBirds[0].brain.model.save('downloads://my-model');
 class NeuralNetwork {
 	constructor(inputs, hiddenUnits, outputs, model = {}) {
 		this.input_nodes = inputs;
@@ -94,6 +98,7 @@ class NeuralNetwork {
 			activation: "sigmoid"
 		});
 		model.add(outputLayer);
+		
 		return model;
 	}
 

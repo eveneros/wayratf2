@@ -2,9 +2,15 @@
 $(document).ready(function() {
 	setCursorByID("world","crosshair");
    totalPopulation=$("#numeroNpcs").val();
+<<<<<<< HEAD
    aliveBirds=aliveBirds;
    init();
    pausegame();
+=======
+  // init();
+  // pausegame();
+  $("#numeroNpcs").focus();
+>>>>>>> main
  });
  function encode( s ) {
     var out = [];
@@ -77,10 +83,26 @@ $(document).ready(function() {
 		}
 
         $("#inicio").click(function(){
-         resetGame();
+         //resetGame();
+		 //totalPopulation = $("#numeroNpcs").val();
+		 if(game==null){
+			init();
+			$("#inicio").html('Pausar Simulación');
+		 }
 			
+			else if (game.status=="playing"){
+				game.status="waitingReplay";
+				$("#inicio").html('Continuar Simulación');
+				}
+			else if (game.status=="waitingReplay"){
+				game.status="playing";
+	
+				}
 			
 		});
+		$("#numeroNpcs").on("change keyup paste click", function(){
+			totalPopulation=$("#numeroNpcs").val();
+			});
         function restartgame(){
 			if (game.status=="playing" ){
 			game.status="waitingReplay";

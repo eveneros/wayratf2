@@ -1,10 +1,6 @@
 tf.setBackend("cpu");
+//tf.loadLayersModel('localstorage://BirdBrain');//load model from localstorage
 
-// Birds currently alived
-let aliveBirds = [];
-// all the birds of the current generation
-let allBirds = [];
-// Array which holds all the pipes on the screen
 let pipes = [];
 let frameCounter = 0;
 // Current generation number
@@ -341,11 +337,13 @@ var AirPlane = function(brain){
 		if (brain instanceof NeuralNetwork) {
 			this.brain = brain.copy();
 			this.brain.mutate(0.1);
-      //console.log("copiando...");
+      console.log("copiando...");
 		} else {
 			// Parameters are number of inputs, number of units in hidden Layer, number of outputs
+      
 			this.brain = new NeuralNetwork(5, 128, 1);
-      console.log("creando cerebro nuevo...");
+      
+      console.log("creando cerebro...");
 		}
 
   
@@ -929,6 +927,7 @@ function createPlane(){
   
 }
 
+
 function createSea(){
   sea = new Sea();
   sea.mesh.position.y = -game.seaRadius;
@@ -1185,6 +1184,7 @@ function norm(value, min, max) {
 
 var fieldDistance, energyBar, replayMessage, fieldLevel, levelCircle;
 
+
 function init(event){
 
   // UI
@@ -1200,7 +1200,9 @@ function init(event){
   sun();
   //createMountainsBack();
   
-  
+  //Save data 
+
+
   createPlane();
   createSea();
   createSky();
@@ -1215,7 +1217,27 @@ function init(event){
   document.addEventListener('mouseup', handleMouseUp, false);
   document.addEventListener('touchend', handleTouchEnd, false);
 */
+//document.addEventListener('keyup', keyPressed,false);
+
   loop();
 }
 
+
+
+ 
+
 //window.addEventListener('load', init, false);
+
+
+//save data:
+function keyPressed(){
+	if(key==='S'){
+	  var birdToSave=alivebirds[0];
+	  var json=birdToSave.brain.serialize();
+	  saveJson(json,'plane.json');
+	  console.log(json);
+	  
+	}
+  } 
+
+  //end save

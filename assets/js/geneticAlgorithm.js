@@ -1,6 +1,11 @@
 // The number of birds in each population
 //const totalPopulation = 25;
 var totalPopulation = 5;
+// Birds currently alived
+var aliveBirds = [];
+
+// all the birds of the current generation
+var allBirds = [];
 var p5=new p5();
 function createNextGeneration() {
 	
@@ -103,3 +108,4 @@ function poolSelection(birds){//aqui se obtiene el mayor score del promedio
 	return birds[index].copy();
     
 }
+

@@ -126,7 +126,7 @@
                         <div class="form-group">
                             <label class="form-label" for="numeroNpcs">Cantidad de Npcs</label>
                             <div class="form-control-wrap">
-                                <input type="number" class="form-control" id="numeroNpcs" placeholder="Cantidad de Npcs" value="1" min="1" max="100" step="1" autofocus>
+                                <input type="text" class="form-control" id="numeroNpcs" placeholder="Cantidad de Npcs" value="15">
                             </div>
                         </div>
                         <ul class="nk-ibx-menu">
@@ -169,7 +169,10 @@
                        
                         
                         
-                        <button class="btn btn-lg btn-primary" id="inicio">Iniciar Simulación</button>
+                        <button class="btn btn-lg btn-primary" id="inicio">Play</button><br>
+                        <button class="btn btn-lg btn-primary" id="btnSave">Save Brain</button><br>
+                        <button class="btn btn-lg btn-primary" id="btnSaveModel">Save TF Model</button><br>
+                        <button class="btn btn-lg btn-primary" id="btnLoad">Load TF Model</button><br>
                     </div>
                 </div>
                 <!-- content @s -->
@@ -196,22 +199,26 @@
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Mayor Distancia Recorrida</h6>
+                                                            <h6 class="subtitle"></h6>
                                                         </div>
                                                         <div class="card-tools">
                                                             <em class="card-hint icon ni ni-help-fill" data-toggle="tooltip" data-placement="left" title="Mayor Distancia Recorrida por el NPC"></em>
                                                         </div>
                                                     </div>
                                                     <div class="card-amount">
-                                                        <span class="amount"> 49,595.34 <span class="currency currency-usd">KM</span>
+                                                        <span class="amount"> 00000 <span class="currency currency-usd">USD</span>
                                                         </span>
                                                         <span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>1.93%</span>
                                                     </div>
                                                     <div class="invest-data">
                                                         <div class="invest-data-amount g-2">
                                                             <div class="invest-data-history">
-                                                                <div class="title">Mejor NPC</div>
-                                                                <div class="amount">2 <span class="currency currency-usd">NPC</span></div>
+                                                                <div class="title">Data</div>
+                                                                <div class="amount">0.0 <span class="currency currency-usd">USD</span></div>
+                                                            </div>
+                                                            <div class="invest-data-history">
+                                                                <div class="title">more data</div>
+                                                                <div class="amount">0.0 <span class="currency currency-usd">USD</span></div>
                                                             </div>
                                                             
                                                         </div>
@@ -222,73 +229,7 @@
                                                 </div>
                                             </div><!-- .card -->
                                         </div><!-- .col -->
-                                        <div class="col-md-4">
-                                            <div class="card card-bordered card-full">
-                                                <div class="card-inner">
-                                                    <div class="card-title-group align-start mb-0">
-                                                        <div class="card-title">
-                                                            <h6 class="subtitle">Total Withdraw</h6>
-                                                        </div>
-                                                        <div class="card-tools">
-                                                            <em class="card-hint icon ni ni-help-fill" data-toggle="tooltip" data-placement="left" title="Total Withdraw"></em>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-amount">
-                                                        <span class="amount"> 49,595.34 <span class="currency currency-usd">USD</span>
-                                                        </span>
-                                                        <span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>1.93%</span>
-                                                    </div>
-                                                    <div class="invest-data">
-                                                        <div class="invest-data-amount g-2">
-                                                            <div class="invest-data-history">
-                                                                <div class="title">This Month</div>
-                                                                <div class="amount">2,940.59 <span class="currency currency-usd">USD</span></div>
-                                                            </div>
-                                                            <div class="invest-data-history">
-                                                                <div class="title">This Week</div>
-                                                                <div class="amount">1,259.28 <span class="currency currency-usd">USD</span></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="invest-data-ck">
-                                                            <canvas class="iv-data-chart" id="totalWithdraw"></canvas>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-                                        <div class="col-md-4">
-                                            <div class="card card-bordered  card-full">
-                                                <div class="card-inner">
-                                                    <div class="card-title-group align-start mb-0">
-                                                        <div class="card-title">
-                                                            <h6 class="subtitle">Balance in Account</h6>
-                                                        </div>
-                                                        <div class="card-tools">
-                                                            <em class="card-hint icon ni ni-help-fill" data-toggle="tooltip" data-placement="left" title="Total Balance in Account"></em>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-amount">
-                                                        <span class="amount"> 79,358.50 <span class="currency currency-usd">USD</span>
-                                                        </span>
-                                                    </div>
-                                                    <div class="invest-data">
-                                                        <div class="invest-data-amount g-2">
-                                                            <div class="invest-data-history">
-                                                                <div class="title">This Month</div>
-                                                                <div class="amount">2,940.59 <span class="currency currency-usd">USD</span></div>
-                                                            </div>
-                                                            <div class="invest-data-history">
-                                                                <div class="title">This Week</div>
-                                                                <div class="amount">1,259.28 <span class="currency currency-usd">USD</span></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="invest-data-ck">
-                                                            <canvas class="iv-data-chart" id="totalBalance"></canvas>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
+                                        
                                         
                                         
                                         
@@ -309,21 +250,21 @@
     <!-- app-root @e -->
     <!-- JavaScript -->
    
-    <script src="./assets/js/bundle.js?ver=2.4.0"></script>
-    <script src="./assets/js/scripts.js?ver=2.4.0"></script>
-    <script src="./assets/js/charts/gd-invest.js?ver=2.4.0"></script>
-    <script src="./assets/js/p5.min.js"></script>
-	<script src="./assets/js/p5.dom.min.js"></script>
-    <script src="./assets/js/TweenMax.min.js"></script>
-	<script src="./assets/js/ThreeCSG.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.0.0/dist/tf.min.js"></script>
-	<!-- <script type="text/javascript" src="tf.min.js"></script> -->
-	<script src="./assets/js/geneticAlgorithm.js"></script>
-	<script src="./assets/js/neuralNetwork.js"></script>
-    <script src="./assets/js/three.min.js"></script>
-    <script src="./assets/js/Sky.js" ></script>
-    <script src="./assets/js/game.js"></script>
-    <script src="./assets/js/others.js"></script>
+    <script type="text/javascript" src="./assets/js/bundle.js?ver=2.4.0"></script>
+    <script type="text/javascript" src="./assets/js/scripts.js?ver=2.4.0"></script>
+    <script type="text/javascript" src="./assets/js/charts/gd-invest.js?ver=2.4.0"></script>
+    <script type="text/javascript" src="./assets/js/p5.min.js"></script>
+	<script type="text/javascript" src="./assets/js/p5.dom.min.js"></script>
+    <script type="text/javascript" src="./assets/js/TweenMax.min.js"></script>
+	<script type="text/javascript" src="./assets/js/ThreeCSG.js"></script>
+	<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.0.0/dist/tf.min.js"></script> -->
+	<script type="text/javascript" src="./assets/js/tf.min.js"></script>
+	<script type="text/javascript" src="./assets/js/geneticAlgorithm.js"></script>
+	<script type="text/javascript" src="./assets/js/neuralNetwork.js"></script>
+    <script type="text/javascript" src="./assets/js/three.min.js"></script>
+    <script type="text/javascript" src="./assets/js/Sky.js" ></script>
+    <script type="text/javascript" src="./assets/js/game.js"></script>
+    <script type="text/javascript" src="./assets/js/others.js"></script>
 </body>
 
 </html>

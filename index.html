@@ -47,9 +47,9 @@
                         <div class="nk-sidebar-footer">
                             <ul class="nk-menu nk-menu-md">
                                 <li class="nk-menu-item">
-                                    <a href="#" class="nk-menu-link" title="Settings">
+                                    <!-- a href="#" class="nk-menu-link" title="Settings">
                                         <span class="nk-menu-icon"><em class="icon ni ni-setting"></em></span>
-                                    </a>
+                                    </a> -->
                                 </li>
                             </ul>
                         </div>
@@ -96,21 +96,18 @@
                                 <div class="nk-header-tools">
                                     <ul class="nk-quick-nav">
                                         
-
                                         <li>
-                                            <div class="drodown">
-                                                <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-toggle="dropdown" aria-expanded="false"><em class="d-none d-sm-inline icon ni ni-calender-date"></em><span><span class="d-none d-md-inline">Generación</span> 30 </span><em class="dd-indc icon ni ni-chevron-right"></em></a>
-                                                <div class="dropdown-menu dropdown-menu-right" style="">
-                                                    <ul class="link-list-opt no-bdr">
-                                                        <li><a href="#"><span>Generación 50</span></a></li>
-                                                        <li><a href="#"><span>Generación 100</span></a></li>
-                                                        <li><a href="#"><span>Generación 200</span></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                            <button class="btn btn-lg btn-primary" id="btnSave">Save Brain</button>
+                        
                                         </li>
-                                        
-                                        
+                                        <li>
+                                            
+                        <button class="btn btn-lg btn-primary" id="btnSaveModel">Save TF Model</button>
+                                        </li>
+                                        <li>
+                                            
+                        <button class="btn btn-lg btn-primary" id="btnLoad">Load TF Model</button>
+                                        </li>
                                         
                                     </ul><!-- .nk-quick-nav -->
                                 </div><!-- .nk-header-tools -->
@@ -126,8 +123,9 @@
                         <div class="form-group">
                             <label class="form-label" for="numeroNpcs">Cantidad de Npcs</label>
                             <div class="form-control-wrap">
-                                <input type="text" class="form-control" id="numeroNpcs" placeholder="Cantidad de Npcs" value="15">
+                                <input type="text" class="form-control" id="numeroNpcs" placeholder="Cantidad de Npcs" value="15" readonly>
                             </div>
+                            <button class="btn btn-lg btn-primary" id="inicio">Play</button>
                         </div>
                         <ul class="nk-ibx-menu">
                             <li>
@@ -169,10 +167,8 @@
                        
                         
                         
-                        <button class="btn btn-lg btn-primary" id="inicio">Play</button><br>
-                        <button class="btn btn-lg btn-primary" id="btnSave">Save Brain</button><br>
-                        <button class="btn btn-lg btn-primary" id="btnSaveModel">Save TF Model</button><br>
-                        <button class="btn btn-lg btn-primary" id="btnLoad">Load TF Model</button><br>
+                        
+                        
                     </div>
                 </div>
                 <!-- content @s -->
@@ -193,46 +189,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
-                                        <div class="col-md-4">
-                                            <div class="card card-bordered card-full">
-                                                <div class="card-inner">
-                                                    <div class="card-title-group align-start mb-0">
-                                                        <div class="card-title">
-                                                            <h6 class="subtitle"></h6>
-                                                        </div>
-                                                        <div class="card-tools">
-                                                            <em class="card-hint icon ni ni-help-fill" data-toggle="tooltip" data-placement="left" title="Mayor Distancia Recorrida por el NPC"></em>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-amount">
-                                                        <span class="amount"> 00000 <span class="currency currency-usd">USD</span>
-                                                        </span>
-                                                        <span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>1.93%</span>
-                                                    </div>
-                                                    <div class="invest-data">
-                                                        <div class="invest-data-amount g-2">
-                                                            <div class="invest-data-history">
-                                                                <div class="title">Data</div>
-                                                                <div class="amount">0.0 <span class="currency currency-usd">USD</span></div>
-                                                            </div>
-                                                            <div class="invest-data-history">
-                                                                <div class="title">more data</div>
-                                                                <div class="amount">0.0 <span class="currency currency-usd">USD</span></div>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                        <div class="invest-data-ck">
-                                                            <canvas class="iv-data-chart" id="totalDeposit"></canvas>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-                                        
-                                        
-                                        
-                                        
                                         
                                         
                                     </div>

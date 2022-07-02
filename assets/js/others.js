@@ -2,15 +2,9 @@
 $(document).ready(function() {
 	setCursorByID("world","crosshair");
    totalPopulation=$("#numeroNpcs").val();
-<<<<<<< HEAD
    aliveBirds=aliveBirds;
    init();
    pausegame();
-=======
-  // init();
-  // pausegame();
-  $("#numeroNpcs").focus();
->>>>>>> main
  });
  function encode( s ) {
     var out = [];

@@ -51,13 +51,14 @@ function generate(oldBirds) {
  function normalizeFitness(birds) {
 	
 	for (let i = 0; i < birds.length; i++) {
+		console.log("Plane: "+i+", score: "+birds[i].score);
 		birds[i].score = p5.pow(birds[i].score, 2);
 	}
 	let sum = 0;
 	//console.log("sum: "+sum);
 	for (let i = 0; i < birds.length; i++) {
 		sum =sum+ birds[i].score;
-		console.log("Plane: "+i+", score: "+birds[i].score);	
+			
 	}
 	for (let i = 0; i < birds.length; i++) {
 		birds[i].fitness = birds[i].score / sum;
@@ -104,7 +105,7 @@ function poolSelection(birds){//aqui se obtiene el mayor score del promedio
 			may=bird.fitness;		
 		}
   	}
-	  console.log("El mejor: "+index + "Distancia: "+may);
+	  console.log("El mejor: "+index + "Fitness: "+may);
 	return birds[index].copy();
     
 }

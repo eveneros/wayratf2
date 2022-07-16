@@ -57,7 +57,7 @@ function generate(oldBirds) {
 	//console.log("sum: "+sum);
 	for (let i = 0; i < birds.length; i++) {
 		sum =sum+ birds[i].score;
-		//console.log("score: "+birds[i].score);	
+		console.log("Plane: "+i+", score: "+birds[i].score);	
 	}
 	for (let i = 0; i < birds.length; i++) {
 		birds[i].fitness = birds[i].score / sum;

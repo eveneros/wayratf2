@@ -104,7 +104,7 @@ function poolSelection(birds){//aqui se obtiene el mayor score del promedio
 			may=bird.fitness;		
 		}
   	}
-	  console.log("El mejor: "+index);
+	  console.log("El mejor: "+index + "Distancia: "+may);
 	return birds[index].copy();
     
 }

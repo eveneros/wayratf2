@@ -51,7 +51,7 @@ function generate(oldBirds) {
  function normalizeFitness(birds) {
 	
 	for (let i = 0; i < birds.length; i++) {
-		console.log("Plane: "+i+", distancia: "+birds[i].score);
+		console.log("Avion: "+i+", distancia: "+birds[i].score);
 	//	birds[i].score = p5.pow(birds[i].score, 2); //no concuerda el mayor
 	}
 	let sum = 0;
@@ -105,7 +105,7 @@ function poolSelection(birds){//aqui se obtiene el mayor score del promedio
 			may=bird.score;		//cambiando fitnes por score
 		}
   	}
-	  console.log("El mejor: "+index + " Distancia: "+may);
+	  //console.log("El mejor: "+index + " Distancia: "+may);
 	return birds[index].copy();
     
 }

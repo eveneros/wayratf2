@@ -1072,7 +1072,7 @@ function loop(){
     game.speed = game.baseSpeed * game.planeSpeed*1.77;
 
   }else if(game.status=="gameover"){
-    difficultyLevel=1;
+    difficultyLevel.innerHTML=1;
     generation++;
 		console.log("Generation: "+generation);
 		createNextGeneration();
@@ -1141,7 +1141,7 @@ function updatePlane(){
   for (let j = aliveBirds.length - 1; j >= 0; j--) {
 		let bird = aliveBirds[j];
     
-    targetY = normalize((game.planeDefaultHeight*(j/50)),-200,200,game.planeDefaultHeight-game.planeAmpHeight, game.planeDefaultHeight+game.planeAmpHeight);//baja un poco
+    targetY = normalize((game.planeDefaultHeight*(j/20)),-200,200,game.planeDefaultHeight-game.planeAmpHeight, game.planeDefaultHeight+game.planeAmpHeight);//baja un poco
     
     targetY=bird.chooseAction(ennemiesInUse,targetY);
     bird.mesh.position.y += (targetY-bird.mesh.position.y)*deltaTime*game.planeMoveSensivity;

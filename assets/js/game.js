@@ -386,7 +386,7 @@ var AirPlane = function(brain){
 
 			// 2. top of the closest
 			//inputs[1] = p5.map(box2.min, 0, box2.getSize(center), 0, 1);
-      inputs[0] = p5.map(closest.mesh.position.y,game.planeDefaultHeight-game.planeAmpHeight, game.planeDefaultHeight+game.planeAmpHeight, 0, 1);
+      inputs[1] = p5.map(closest.mesh.position.y,game.planeDefaultHeight-game.planeAmpHeight, game.planeDefaultHeight+game.planeAmpHeight, 0, 1);
 			
 			// 3. ennemy's y position
 			inputs[2] = p5.map(box2.max, 0, box2.getSize(center), 0, 1);

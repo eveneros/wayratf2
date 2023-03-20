@@ -336,12 +336,12 @@ var AirPlane = function(brain){
 
 		if (brain instanceof NeuralNetwork) {
 			this.brain = brain.copy();
-			this.brain.mutate(0.1);
+			//this.brain.mutate(0.1);//mutation to weights
       console.log("copiando...");
 		} else {
 			// Parameters are number of inputs, number of units in hidden Layer, number of outputs
       
-			this.brain = new NeuralNetwork(5, 128, 1);
+			this.brain = new NeuralNetwork(5, 3, 1); //128 best performance
       
       console.log("creando cerebro...");
 		}

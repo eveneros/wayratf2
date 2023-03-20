@@ -1,6 +1,6 @@
 // The number of birds in each population
 //const totalPopulation = 25;
-var totalPopulation = 5;
+var totalPopulation = 20;
 // Birds currently alived
 var aliveBirds = [];
 

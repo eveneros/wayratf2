@@ -1,7 +1,8 @@
 //cursor Style
 $(document).ready(function() {
 	setCursorByID("world","crosshair");
-   totalPopulation=$("#numeroNpcs").val();
+   //totalPopulation=$("#numeroNpcs").val();
+   $("#numeroNpcs").val(totalPopulation);
    aliveBirds=aliveBirds;
    init();
    pausegame();

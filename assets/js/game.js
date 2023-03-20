@@ -401,7 +401,10 @@ var AirPlane = function(brain){
       if (action[0] > 0.5) {
         returnAction+=0.5;
 
-      }else
+      }else if (action[0] > 0 &&  action[0] <= 0.5){
+        returnAction-=0.5;
+      }      
+      else
         returnAction=0;
       
 		}

@@ -51,7 +51,7 @@ function generate(oldBirds) {
  function normalizeFitness(birds) {
 	
 	for (let i = 0; i < birds.length; i++) {
-		console.log("Avion: "+i+", distancia: "+birds[i].score);
+		console.log("Avión: "+i+", distancia: "+birds[i].score);
 	//	birds[i].score = p5.pow(birds[i].score, 2); //no concuerda el mayor
 	}
 	let sum = 0;

@@ -325,9 +325,7 @@ Pilot.prototype.updateHairs = function(){
 }
 
 var AirPlane = function(brain){
-  //this.brain =new NeuralNetwork(4, 16, 2);
   
-    
 		// How many frames the bird stays alive
 		this.score = 0;
 

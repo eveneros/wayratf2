@@ -29,11 +29,7 @@ class NeuralNetwork {
 		  data = JSON.parse(data);
 		}
 		let nn = new NeuralNetwork(data.input_nodes, data.hidden_nodes, data.output_nodes);
-		/* nn.weights_ih = Matrix.deserialize(data.weights_ih);
-		nn.weights_ho = Matrix.deserialize(data.weights_ho);
-		nn.bias_h = Matrix.deserialize(data.bias_h);
-		nn.bias_o = Matrix.deserialize(data.bias_o);
-		nn.learning_rate = data.learning_rate; */
+		
 		return nn;
 	  }
 	// Copy a model
@@ -104,20 +100,3 @@ class NeuralNetwork {
 
 	
 }
-//funcion gaussiana
-// function randomGaussian(){
-// 	sd = 1
-// 	let y1, x1, x2, w;
-	
-// 	  do {
-// 		x1 = Math.random(2) - 1;
-// 		x2 = Math.random(2) - 1;
-// 		w = x1 * x1 + x2 * x2;
-// 	  } while (w >= 1);
-// 	  w = Math.sqrt(-2 * Math.log(w) / w);
-// 	  y1 = x1 * w;
-// 	  y2 = x2 * w;
-
-// 	const m = 0;
-// 	return y1 * sd + m;
-// }

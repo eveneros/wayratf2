@@ -1,223 +1,140 @@
 <!DOCTYPE html>
-<html lang="zxx" class="js">
-
+<html lang="es">
 <head>
-   
-    <meta charset="utf-8">
-    <meta name="author" content="EVeneros">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
-    <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="./images/favicon.png">
-    <!-- Page Title  -->
-    <title>WayraTF</title>
-    <!-- StyleSheets  -->
-    <link rel="stylesheet" href="./assets/css/dashlite.css?ver=2.4.0">
-    <link id="skin-default" rel="stylesheet" href="./assets/css/theme.css?ver=2.4.0">
-    <link rel="stylesheet" href="./assets/css/game.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEURO-AVIATOR · Deep Neuroevolution Training</title>
+<style>
+  :root{
+    --bg:#05070d; --panel:rgba(10,16,28,.82); --border:rgba(80,200,255,.18);
+    --accent:#22d3ee; --accent2:#a855f7; --text:#e6f1ff; --dim:#7a8ca3;
+    --good:#22c55e; --warn:#f59e0b; --bad:#ef4444;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);
+    font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;
+    -webkit-font-smoothing:antialiased}
+  canvas{display:block}
+  #c{position:fixed;inset:0;width:100%;height:100%}
+  .hud{position:fixed;inset:0;pointer-events:none;z-index:10}
+  .hud>*{pointer-events:auto}
+  .topbar{
+    position:absolute;top:12px;left:50%;transform:translateX(-50%);
+    display:flex;gap:20px;padding:10px 22px;background:var(--panel);
+    border:1px solid var(--border);border-radius:12px;
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    align-items:center;box-shadow:0 8px 30px rgba(0,0,0,.5)
+  }
+  .brand{font-weight:700;letter-spacing:2px;color:var(--accent);
+    text-shadow:0 0 12px rgba(34,211,238,.6);font-size:13px}
+  .stat{display:flex;flex-direction:column;gap:2px;min-width:60px}
+  .stat .k{font-size:9px;letter-spacing:1.4px;color:var(--dim);text-transform:uppercase}
+  .stat .v{font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
+
+  .panel{position:absolute;background:var(--panel);border:1px solid var(--border);
+    border-radius:12px;padding:14px;backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);box-shadow:0 10px 40px rgba(0,0,0,.55)}
+  .panel h3{margin-bottom:10px;font-size:10px;letter-spacing:2px;color:var(--accent);
+    text-transform:uppercase;border-bottom:1px solid var(--border);padding-bottom:8px}
+
+  #left-panel{top:80px;left:14px;width:230px}
+  #right-panel{top:80px;right:14px;width:230px}
+  #bottom-panel{bottom:14px;left:50%;transform:translateX(-50%);
+    width:min(880px,calc(100vw - 28px));height:150px;display:flex;flex-direction:column}
+
+  .row{display:flex;justify-content:space-between;padding:3px 0;font-size:11px}
+  .row .l{color:var(--dim)}
+  .row .r{color:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
+
+  .bar{height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;margin:8px 0}
+  .bar>div{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));
+    border-radius:3px;transition:width .3s ease}
+
+  button{background:rgba(34,211,238,.08);border:1px solid var(--border);color:var(--text);
+    padding:7px 10px;border-radius:6px;font-family:inherit;font-size:11px;
+    cursor:pointer;transition:all .15s;letter-spacing:.4px}
+  button:hover{background:rgba(34,211,238,.22);border-color:var(--accent)}
+  button.primary{background:rgba(34,211,238,.18);border-color:var(--accent);color:#cffaff}
+  button.danger{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.4);color:#fecaca}
+  button.danger:hover{background:rgba(239,68,68,.25);border-color:var(--bad)}
+  .btn-row{display:flex;gap:6px;margin-top:8px}
+  .btn-row button{flex:1}
+
+  select,input[type=range]{background:rgba(255,255,255,.05);border:1px solid var(--border);
+    color:var(--text);padding:5px 8px;border-radius:5px;font-family:inherit;font-size:11px;width:100%}
+  input[type=range]{padding:0;height:22px;accent-color:var(--accent);cursor:pointer}
+  select:focus,input:focus{outline:1px solid var(--accent)}
+
+  #chart-canvas{flex:1;width:100%;min-height:0}
+
+  .toast{position:absolute;bottom:180px;left:50%;transform:translateX(-50%);
+    padding:10px 18px;background:var(--panel);border:1px solid var(--accent);
+    border-radius:8px;font-size:12px;opacity:0;transition:opacity .3s;
+    pointer-events:none;box-shadow:0 0 24px rgba(34,211,238,.3)}
+  .toast.show{opacity:1}
+</style>
 </head>
-
-<body class="nk-body npc-default has-apps-sidebar has-sidebar dark-mode">
-    <div class="nk-app-root">
-        <div class="nk-apps-sidebar is-dark">
-            
-            <div class="nk-sidebar-element">
-                <div class="nk-sidebar-body">
-                    <div class="nk-sidebar-content" data-simplebar>
-                        
-                                
-                            
-                        
-                        <div class="nk-sidebar-menu">
-                            <!-- Menu -->
-                            <ul class="nk-menu apps-menu">
-                                
-                                <li>
-                                    
-                                
-                                        <span class="lead-text">WayraTF</span>
-                                        <span class="sub-text">EVeneros</span>
-                                    
-                                </li>
-                               
-                                <li class="nk-menu-hr"></li>
-                                
-                            </ul>
-                        </div>
-                        <div class="nk-sidebar-footer">
-                            <ul class="nk-menu nk-menu-md">
-                                <li class="nk-menu-item">
-                                    <!-- a href="#" class="nk-menu-link" title="Settings">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-setting"></em></span>
-                                    </a> -->
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <!-- main @s -->
-        <div class="nk-main ">
-            <!-- wrap @s -->
-            <div class="nk-wrap ">
-                <!-- main header @s -->
-                <div class="nk-header nk-header-fixed is-light">
-                    <div class="container-fluid">
-                        <div class="nk-header-wrap">
-                            <div class="nk-menu-trigger d-xl-none ml-n1">
-                                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
-                            </div>
-                            
-                            <div class="nk-header-wrap">
-                                <div class="nk-menu-trigger d-xl-none ml-n1">
-                                    <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
-                                </div>
-                                <div class="nk-header-brand d-xl-none">
-                                    
-                                </div><!-- .nk-header-brand -->
-                                <div class="nk-header-news d-none d-xl-block">
-                                    
-                                    <div class="nk-news-list">
-                                        <a class="nk-news-item" href="#">
-                                            
-                                            <div class="nk-news-text">
-                                                <p>VIDEOJUEGO DEEP REINFORCEMENT LEARNING CON TENSORFLOW---------------<a href="https://github.com/eveneros/" target="_blank"><span>GITHUB.........</span><em class="icon ni ni-external"></em></a></p>
-                                                
-                                            </div>
-                                            
-                                        </a>
-                                    </div>
-                                </div><!-- .nk-header-news -->
-                                <div class="nk-header-tools">
-                                    <ul class="nk-quick-nav">
-                                        
-                                        <li>
-                                            <button class="btn btn-lg btn-primary" id="btnSave">Grabar Cerebro</button>
-                        
-                                        </li>
-                                        <li>
-                                            
-                        <button class="btn btn-lg btn-primary" id="btnSaveModel">Grabar Modelo TF</button>
-                                        </li>
-                                        <li>
-                                            
-                        <button class="btn btn-lg btn-primary" id="btnLoad">Cargar Model TF</button>
-                                        </li>
-                                        
-                                    </ul><!-- .nk-quick-nav -->
-                                </div><!-- .nk-header-tools -->
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <!-- main header @e -->
-                <div class="nk-sidebar" data-content="sidebarMenu">
-                    <div class="nk-sidebar-inner" data-simplebar>
-                         
-                        <div class="form-group">
-                            <label class="form-label" for="numeroNpcs">Cantidad de Npcs</label>
-                            <div class="form-control-wrap">
-                                <input type="text" class="form-control" id="numeroNpcs" placeholder="Cantidad de Npcs" value="5" readonly>
-                            </div>
-                            <button class="btn btn-lg btn-primary" id="inicio">Play</button>
-                        </div>
-                        <ul class="nk-ibx-menu">
-                            <li>
-                                <a class="nk-ibx-menu-item" href="#">
-                                    <em class="icon ni ni-send"></em>
-                                    <span class="nk-ibx-menu-text">Distancia</span>
-                                    <span class="badge badge-pill badge-primary" id="distValue">0</span>
-                                </a>
-                            </li>
-
-                          
-                            <li>
-                                <a class="nk-ibx-menu-item" href="#">
-                                    
-                                    <em class="icon ni ni-user"></em>
-                                    <span class="nk-ibx-menu-text">Generacion</span>
-                                    <span class="badge badge-pill badge-danger badge-dim" id="levelValue">0</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nk-ibx-menu-item" href="#">
-                                    
-                                    
-                                    <span class="nk-ibx-menu-text">Nivel</span>
-                                    <svg class="level-circle" id="levelCircle" viewbox="0 0 200 200">
-                                        <circle id="levelCircleBgr" r="80" cx="100" cy="100" fill="none" stroke="#d1b790" stroke-width="24px" />
-                                        <circle id="levelCircleStroke" r="80" cx="100" cy="100" fill="none" #f25346 stroke="#7FFF00" stroke-width="14px" stroke-dasharray="502" />
-                                    </svg>
-                                    <span class="badge badge-pill badge-primary" id="difficultyLevel">1</span>
-                                    
-                                </a>
-                            </li>
-                            <li>
-                                
-                            </li>
-                            
-                        </ul>
-                       
-                       
-                        
-                        
-                        
-                        
-                    </div>
-                </div>
-                <!-- content @s -->
-                <div class="nk-content ">
-                    <div class="container-fluid">
-                        <div class="nk-content-inner">
-                            <div class="nk-content-body">
-                                
-                                <div class="nk-block">
-                                    <div class="row g-gs">
-                                        
-
-                                        <div class="col-md-12 col-xxl-12">
-                                            <div class="card card-bordered card-full">
-                                                <div class="card-inner nk-content-inner">
-                                                    
-                                                    <div class="world" id="world"></div>  
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- content @e -->
-            </div>
-            <!-- wrap @e -->
-        </div>
-        <!-- main @e -->
+<body>
+  <canvas id="c"></canvas>
+  <div class="hud">
+    <div class="topbar">
+      <span class="brand">◆ NEURO-AVIATOR</span>
+      <div class="stat"><span class="k">Gen</span><span class="v" id="s-gen">1</span></div>
+      <div class="stat"><span class="k">Alive</span><span class="v" id="s-alive">0</span></div>
+      <div class="stat"><span class="k">Best (km)</span><span class="v" id="s-best">0</span></div>
+      <div class="stat"><span class="k">Level</span><span class="v" id="s-level">1</span></div>
+      <div class="stat"><span class="k">Time</span><span class="v" id="s-time">00:00</span></div>
+      <div class="stat"><span class="k">Goal</span><span class="v" id="s-goal">0%</span></div>
+      <div class="stat"><span class="k">FPS</span><span class="v" id="s-fps">60</span></div>
     </div>
-    <!-- app-root @e -->
-    <!-- JavaScript -->
-   
-    <script type="text/javascript" src="./assets/js/bundle.js?ver=2.4.0"></script>
-    <script type="text/javascript" src="./assets/js/scripts.js?ver=2.4.0"></script>
-    <script type="text/javascript" src="./assets/js/charts/gd-invest.js?ver=2.4.0"></script>
-    <script type="text/javascript" src="./assets/js/p5.min.js"></script>
-	<script type="text/javascript" src="./assets/js/p5.dom.min.js"></script>
-    <script type="text/javascript" src="./assets/js/TweenMax.min.js"></script>
-	<script type="text/javascript" src="./assets/js/ThreeCSG.js"></script>
-	<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.0.0/dist/tf.min.js"></script> -->
-	<script type="text/javascript" src="./assets/js/tf.min.js"></script>
-	<script type="text/javascript" src="./assets/js/geneticAlgorithm.js"></script>
-	<script type="text/javascript" src="./assets/js/neuralNetwork.js"></script>
-    <script type="text/javascript" src="./assets/js/three.min.js"></script>
-    <script type="text/javascript" src="./assets/js/Sky.js" ></script>
-    <script type="text/javascript" src="./assets/js/game.js"></script>
-    <script type="text/javascript" src="./assets/js/others.js"></script>
-</body>
 
+    <div id="left-panel" class="panel">
+      <h3>Population Stats</h3>
+      <div class="row"><span class="l">Avg Dist</span><span class="r" id="p-avg">0</span></div>
+      <div class="row"><span class="l">Min Dist</span><span class="r" id="p-min">0</span></div>
+      <div class="row"><span class="l">Max Dist</span><span class="r" id="p-max">0</span></div>
+      <div class="row"><span class="l">Alive</span><span class="r" id="p-alive">0/0</span></div>
+      <div class="row"><span class="l">Mutation</span><span class="r" id="p-mut">15%</span></div>
+      <div class="bar"><div id="p-bar" style="width:0%"></div></div>
+      <div class="row"><span class="l">Gen Best</span><span class="r" id="p-genbest">0 km</span></div>
+      <div class="row"><span class="l">Global Best</span><span class="r" id="p-globalbest">0 km</span></div>
+    </div>
+
+    <div id="right-panel" class="panel">
+      <h3>Controls</h3>
+      <div class="btn-row">
+        <button id="btn-pause" class="primary">⏸ Pause</button>
+        <button id="btn-reset" class="danger">⟲ Reset</button>
+      </div>
+      <div style="margin-top:12px">
+        <div class="row"><span class="l">Sim Speed</span><span class="r" id="v-speed">1×</span></div>
+        <input type="range" id="in-speed" min="1" max="30" value="1" step="1">
+      </div>
+      <div style="margin-top:10px">
+        <div class="row"><span class="l">Difficulty</span><span class="r" id="v-diff">Normal</span></div>
+        <select id="in-diff">
+          <option value="0.5">Easy</option>
+          <option value="1" selected>Normal</option>
+          <option value="1.6">Hard</option>
+          <option value="2.5">Extreme</option>
+        </select>
+      </div>
+      <div class="btn-row" style="margin-top:12px">
+        <button id="btn-save">💾 Save Brain</button>
+        <button id="btn-load">📁 Load</button>
+      </div>
+      <input type="file" id="file-in" style="display:none" accept=".json">
+    </div>
+
+    <div id="bottom-panel" class="panel">
+      <h3>Evolution Progress</h3>
+      <canvas id="chart-canvas"></canvas>
+    </div>
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.139.2/build/three.min.js"></script>
+  <script src="game-ai.js"></script>
+</body>
 </html>
